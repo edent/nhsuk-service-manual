@@ -1,9 +1,11 @@
-{% set pageTitle = '5. Use filter questions, but be careful'%}
+{% set pageTitle = 'Use filter questions, but be careful'%}
 {% set pageSection = 'How to write good questions' %}
-{% set pageDescription = 'Filter (or branching) questions, including Yes No questions, help you route users to the questions that apply to them. Sometimes extra questions improve users&apos; experience.' %}
+{% set pageDescription = 'Filter (or branching) questions, including Yes No questions, help you route users to the questions that apply to them. Sometimes extra questions improve users experience.' %}
 
 {% extends 'includes/layout.njk' %}
 {% from 'review-date/macro.njk' import reviewDate %}
+{% from 'radios/macro.njk' import radios %}
+{% from 'includes/design-example.njk' import designExample %}
 
 {% block breadcrumb %}
 {{ breadcrumb({
@@ -26,12 +28,19 @@
 {% block body %}
 <div class="nhsuk-grid-row">
    <div class="nhsuk-grid-column-two-thirds">
-     <h1 class="nhsuk-u-margin-bottom-5">{{pageTitle}}</h1>
-      <p class="nhsuk-body-l nhsuk-u-margin-bottom-8">Filter (or branching) questions, including Yes No questions, help you route users to the questions that apply to them. Sometimes extra questions improve users' experience.</p>
-   </div>
-</div>
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-two-thirds">
+     <h1>
+      <span class="nhsuk-caption-l">
+        {{pageSection}}
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
+      {{pageTitle}}
+    </h1>
+
+    {% include 'content/how-to-write-good-questions/write-good-questions-nav.njk' %}
+
+    <p>{{pageDescription}}</p>
+
+    <img class="nhsuk-image__img nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7" src="/service-manual/assets/binary-question-long.png" alt="Screenshot of NHS Manage your referral login">
 
 
   <p>Filter questions ask a short question first - often a Yes No question. They let you:</p>
@@ -40,6 +49,37 @@
     <li>avoid optional questions, because users only answer the questions that apply to them</li>
     <li>simplify long questions</li>
   </ul>
+
+  <div class="app-example nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+    <strong class="nhsuk-tag nhsuk-tag--dark-grey app-example__heading">Example</strong>
+
+    {% from 'radios/macro.njk' import radios %}
+
+    {{ radios({
+      "idPrefix": "example",
+      "name": "example",
+      "fieldset": {
+        "legend": {
+          "text": "Have you changed your name?",
+          "classes": "nhsuk-fieldset__legend--m"
+        }
+      },
+      "hint": {
+        "text": "This includes changing your last name or spelling your name differently."
+      },
+      "items": [
+        {
+          "value": "yes",
+          "text": "Yes"
+        },
+        {
+          "value": "no",
+          "text": "No"
+        }
+      ]
+    }) }}
+  </div>
+
   <p>If you are offering people different routes, explain upfront any information they will need to have to hand so that they can make an informed choice. For example: "If you do this, you will need [whatever]." There is more information about this in <a href=""/service-manual/content/how-to-write-good-questions/6-write-the-supporting-content-for-your-form"">6. Write the supporting content for your form</a>.</p>
   <p>You may not need to collect answers to filter questions.</p>
   <p>Filter questions are useful but there are some things to bear in mind, especially with Yes No questions.</p>
@@ -57,15 +97,45 @@
 <p>Sometimes you can test this by leaving a space for people to type in.</p>
 <h2>Ask 1 question at a time</h2>
 <p>Make sure you're asking 1 question at a time - not 2 questions in 1.</p>
-<p>Here's an example of 2 in 1: “If you have an email address, can we contact you about research?”</p>
-<p>Here's an example of 3 questions in 1: "If this questionnaire has highlighted any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?"</p>
+<p>Here's an example of 2 in 1:</p>
+<div class="app-example">
+  <strong class="nhsuk-tag nhsuk-tag--dark-grey app-example__heading">Example</strong>
+  <p>“If you have an email address, can we contact you about research?”</p>
+</div>
+<p>Here's an example of 3 questions in 1:</p>
+<div class="app-example">
+  <strong class="nhsuk-tag nhsuk-tag--dark-grey app-example__heading">Example</strong>
+  <p>"If this questionnaire has highlighted any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?"</p>
+</div>
+
 
 <h2>Be clear what "Yes" and "No" mean</h2>
-<p>Rather than simply offering "Yes" or "No" options, be clear, for example:</p>
-<ul>
-  <li>"Yes, you can contact me by email about research"</li>
-  <li>"No, do not contact me about research"</li>
-</ul>
+<p>Rather than simply offering "Yes" or "No" options, be clear.</p>
+
+<div class="app-example nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+  <strong class="nhsuk-tag nhsuk-tag--dark-grey app-example__heading">Example</strong>
+  {{ radios({
+    "idPrefix": "example",
+    "name": "example",
+    "fieldset": {
+      "legend": {
+        "text": "Can we contact you by email about research?",
+        "classes": "nhsuk-fieldset__legend--m"
+      }
+    },
+    "items": [
+      {
+        "value": "yes",
+        "text": "Yes, you can contact me by email about research"
+      },
+      {
+        "value": "no",
+        "text": "No, do not contact me about research"
+      }
+    ]
+  }) }}
+</div>
+
 <p>In a simple Yes No question, "No" could also mean:<p>
 <ul>
   <li>"No, do not contact me by email"</li>
@@ -80,6 +150,34 @@
   <li>"I only want to know about x research"</li>
 </ul>
 
+<div class="app-example nhsuk-u-margin-top-7 nhsuk-u-margin-bottom-7">
+  <strong class="nhsuk-tag nhsuk-tag--dark-grey app-example__heading">Example</strong>
+  {{ radios({
+    "idPrefix": "example",
+    "name": "example",
+    "fieldset": {
+      "legend": {
+        "text": "Can we contact you by email about research?",
+        "classes": "nhsuk-fieldset__legend--m"
+      }
+    },
+    "items": [
+      {
+        "value": "yes",
+        "text": "Yes, you can contact me by email about research"
+      },
+      {
+        "value": "no",
+        "text": "No, do not contact me about research"
+      },
+      {
+        "value": "Understand",
+        "text": "I don't understand the question"
+      }
+    ]
+  }) }}
+</div>
+
 <p>You could include alternatives like:</p>
 <ul>
   <li>Other</li>
@@ -92,14 +190,14 @@
     <div class="nhsuk-review-date">
       <p class="nhsuk-body-s">Updated: September 2019</p>
     </div>
-    </div>
+
     <nav class="nhsuk-pagination" role="navigation" aria-label="Pagination">
     <ul class="nhsuk-list nhsuk-pagination__list">
     <li class="nhsuk-pagination-item--previous">
       <a class="nhsuk-pagination__link nhsuk-pagination__link--prev" href="/service-manual/content/how-to-write-good-questions/4-get-the-questions-into-order">
         <span class="nhsuk-pagination__title">Previous</span>
         <span class="nhsuk-u-visually-hidden">:</span>
-        <span class="nhsuk-pagination__page">4. Get the questions into order</span>
+        <span class="nhsuk-pagination__page">Get the questions into order</span>
         <svg class="nhsuk-icon nhsuk-icon__arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M4.1 12.3l2.7 3c.2.2.5.2.7 0 .1-.1.1-.2.1-.3v-2h11c.6 0 1-.4 1-1s-.4-1-1-1h-11V9c0-.2-.1-.4-.3-.5h-.2c-.1 0-.3.1-.4.2l-2.7 3c0 .2 0 .4.1.6z"></path>
         </svg>
@@ -109,7 +207,7 @@
       <a class="nhsuk-pagination__link nhsuk-pagination__link--next" href="/service-manual/content/how-to-write-good-questions/6-write-the-supporting-content-for-your-form">
         <span class="nhsuk-pagination__title">Next</span>
         <span class="nhsuk-u-visually-hidden">:</span>
-        <span class="nhsuk-pagination__page">6. Write the supporting content for your form</span>
+        <span class="nhsuk-pagination__page">Write the supporting content for your form</span>
         <svg class="nhsuk-icon nhsuk-icon__arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M19.6 11.66l-2.73-3A.51.51 0 0 0 16 9v2H5a1 1 0 0 0 0 2h11v2a.5.5 0 0 0 .32.46.39.39 0 0 0 .18 0 .52.52 0 0 0 .37-.16l2.73-3a.5.5 0 0 0 0-.64z"></path>
         </svg>
@@ -118,5 +216,6 @@
   </ul>
 </nav>
 
+  </div>
   </div>
 {% endblock %}
