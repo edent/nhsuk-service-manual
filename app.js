@@ -76,7 +76,7 @@ app.get('/service-manual/design-example/:example', (req, res) => {
 });
 
 app.get('/service-manual/search', (req, res) => {
-  var resultsPerPage = 10; 
+  var resultsPerPage = 10;
   var query = req.query['search-field'] || '';
   var currentPage = parseInt(req.query['page']);
   var results = pageIndex.search(query);
@@ -85,7 +85,7 @@ app.get('/service-manual/search', (req, res) => {
     currentPage = 1
   } else if(currentPage > maxPage || currentPage < 1){
   currentPage = 1
-  
+
   }
   var startingIndex = resultsPerPage * (currentPage -1)
   var endingIndex = startingIndex + resultsPerPage
@@ -164,10 +164,8 @@ if (config.env === 'development') {
   app.listen(config.port);
 }
 
-/*
 setTimeout(function(){
   pageIndex.init();
 }, 2000);
-*/
 
 module.exports = app;
