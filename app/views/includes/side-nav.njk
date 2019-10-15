@@ -1,7 +1,14 @@
-{% set getStartedNavigation = [
-  { title: "Design principles", url: "/service-manual/get-started/design-principles" },
+{% set principlesNavigation = [
+  { title: "Design principles", url: "/service-manual/get-started/design-principles" }
+] %}
+
+{% set setupNavigation = [
   { title: "Prototyping", url: "/service-manual/get-started/prototyping" },
   { title: "Production code", url: "/service-manual/get-started/production" }
+] %}
+
+{% set howtoNavigation = [
+  { title: "Understanding focus state styles", url: "/service-manual/get-started/design-principles" }
 ] %}
 
 {% set accessibilityEveryoneNavigation = [
@@ -28,6 +35,18 @@
   { title: "Numbers, measurements, dates and time", url: "/service-manual/content/numbers-measurements-dates-time" },
   { title: "Formatting and punctuation", url: "/service-manual/content/formatting-and-punctuation" },
   { title: "Links and PDFs", url: "/service-manual/content/links-and-pdfs" }
+] %}
+
+{% set contentQuestionsNavigation = [
+  { title: "Introduction", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Understand the problem before you write your questions", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Make sure you need each question", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Consider the sensitivities around your questions", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Use Yes No questions, but be careful", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Get the questions into order", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Think of the form as a conversation", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Write the supporting content for your form", url: "/service-manual/content/make-sure-you-need-each-question" },
+  { title: "Test your questions", url: "/service-manual/content/make-sure-you-need-each-question" }
 ] %}
 
 {% set stylesNavigation = [
@@ -85,10 +104,24 @@
 
 <nav class="app-side-nav">
   {%- if pageSection == 'Get started' %}
+  <h2 class="app-side-nav__heading">Principles</h2>
   <ul class="nhsuk-list app-side-nav__list">
-  {% for item in getStartedNavigation %}
+  {% for item in principlesNavigation %}
     <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
   {% endfor %}
+  </ul>
+  <h2 class="app-side-nav__heading">Setup guides</h2>
+  <ul class="nhsuk-list app-side-nav__list">
+  {% for item in setupNavigation %}
+    <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+  </ul>
+  <h2 class="app-side-nav__heading">How to guides</h2>
+  <ul class="nhsuk-list app-side-nav__list">
+  {% for item in howtoNavigation %}
+    <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+  </ul>
   {% endif %}
   {%- if pageSection == 'Accessibility' %}
   <h2 class="app-side-nav__heading">Everyone needs to know...</h2>
@@ -105,10 +138,18 @@
   </ul>
   {% endif %}
   {%- if pageSection == 'Content style guide' %}
+  <h2 class="app-side-nav__heading">Style guide</h2>
   <ul class="nhsuk-list app-side-nav__list">
   {% for item in contentNavigation %}
     <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
   {% endfor %}
+  </ul>
+  <h2 class="app-side-nav__heading">How to write good questions for forms</h2>
+  <ul class="nhsuk-list app-side-nav__list">
+  {% for item in contentQuestionsNavigation %}
+    <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+  </ul>
   {% endif %}
   {%- if pageSection == 'Styles' %}
   <ul class="nhsuk-list app-side-nav__list">

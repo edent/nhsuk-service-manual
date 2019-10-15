@@ -318,3 +318,10 @@ td {
     }
   }
 }
+
+// Improve panel
+.app-improve-panel {
+  @include nhsuk-responsive-margin(5, 'top');
+  @include nhsuk-responsive-padding(3, 'top');
+  border-top: 4px solid $color_nhsuk-blue;
+}
