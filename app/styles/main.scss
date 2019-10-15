@@ -237,19 +237,16 @@ td {
   }
 }
 
-.app-promo--icons {
-  padding: 16px 0;
-}
-
 .app-promo--icons__icon {
+  align-items: center;
   display: flex;
   height: 110px;
-  max-width: 100%;
-  align-items: center;
   justify-content: center;
+  max-width: 100%;
 }
 
 .app-promo--icons {
+  padding: 16px 0;
 
   .nhsuk-promo__link-wrapper {
     &:hover {
