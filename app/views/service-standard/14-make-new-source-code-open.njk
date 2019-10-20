@@ -19,15 +19,16 @@
 {% endblock %}
 
 {% block body %}
-<div class="nhsuk-grid-row nhsuk-u-margin-bottom-5">
-  <div class="nhsuk-grid-column-two-thirds">
-    <h1 class="nhsuk-u-margin-bottom-5">{{pageTitle}}</h1>
-    <p class="nhsuk-body-l">Make all new source code open and reusable, and publish it under appropriate licences. If you can't do this for specific subsets of the source code, provide a convincing explanation.</p>
-  </div>
-</div>
-
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
+    <h1>
+      <span class="nhsuk-caption-l">
+        NHS service standard
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
+      {{pageTitle}}
+    </h1>
+    <p class="nhsuk-body-l">Make all new source code open and reusable, and publish it under appropriate licences. If you can't do this for specific subsets of the source code, provide a convincing explanation.</p>
 
     <h2>Why it's important</h2>
     <p>Public services are built with public money. So unless there’s a good reason not to, the code they’re based should be made available for other people to reuse and build on.</p>

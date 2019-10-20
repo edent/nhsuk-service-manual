@@ -141,3 +141,39 @@ h1 + .nhsuk-lede-text--small {
     }
   }
 }
+
+// Service standard
+.app-service-standard {
+  border-top: 1px solid $nhsuk-border-color;
+}
+
+.app-service-standard--last {
+  border-bottom: 1px solid $nhsuk-border-color;
+}
+
+.app-service-standard__heading,
+.app-service-standard__link {
+  margin-left: 56px;
+
+  @include mq($until: tablet) {
+    margin-left: 32px;
+  }
+}
+
+.app-service-standard__heading {
+  margin-bottom: 16px;
+  padding-top: 24px;
+}
+
+.app-service-standard__link {
+  margin-bottom: 24px;
+}
+
+.app-service-standard__number {
+  float: left;
+  margin-left: -56px;
+
+  @include mq($until: tablet) {
+    margin-left: -32px;
+  }
+}
