@@ -147,10 +147,11 @@ h1 + .nhsuk-lede-text--small {
   border-top: 1px solid $nhsuk-border-color;
 }
 
-.app-service-standard--last {
+.app-service-standard--bottom{
   border-bottom: 1px solid $nhsuk-border-color;
 }
 
+.app-service-standard__type,
 .app-service-standard__heading,
 .app-service-standard__link {
   margin-left: 56px;
@@ -160,13 +161,19 @@ h1 + .nhsuk-lede-text--small {
   }
 }
 
+.app-service-standard__type {
+  @include nhsuk-responsive-margin(4, 'bottom');
+  @include nhsuk-responsive-margin(7, 'top');
+}
+
 .app-service-standard__heading {
-  margin-bottom: 16px;
-  padding-top: 24px;
+  @include nhsuk-responsive-margin(3, 'bottom');
+  @include nhsuk-responsive-padding(4, 'top');
+  @include nhsuk-font(22, $weight: bold);
 }
 
 .app-service-standard__link {
-  margin-bottom: 24px;
+  @include nhsuk-responsive-margin(4, 'bottom');
 }
 
 .app-service-standard__number {
