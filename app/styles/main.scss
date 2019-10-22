@@ -9,10 +9,14 @@
 
 // Image with border
 .nhsuk-image--border {
-  @include nhsuk-responsive-margin(7, 'bottom');
+  @include nhsuk-responsive-margin(4, 'bottom');
 
   border: 1px solid $color_nhsuk-grey-4;
   width: 100%;
+
+  & + h2 {
+    @include nhsuk-responsive-padding(4, 'top');
+  }
 }
 
 /**
