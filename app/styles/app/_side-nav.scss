@@ -1,7 +1,7 @@
 // Side nav
 // Left hand side
 .app-side-nav__heading {
-  @include nhsuk-font(19, $weight: bold, $line-height: 1.25);
+  @include nhsuk-font(19, $line-height: 1.25);
   color: $nhsuk-secondary-text-color;
   margin-bottom: 12px;
   padding-top: 4px;
