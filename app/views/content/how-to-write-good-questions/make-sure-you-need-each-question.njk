@@ -1,10 +1,13 @@
 {% set pageTitle = 'Make sure you need each question' %}
-{% set pageSection = 'Content style guide' %}
-{% set navSection = 'How to write good questions for forms' %}
+{% set pageSection = 'How to write good questions for forms' %}
 {% set pageDescription = 'Question your questions. Keep them to a minimum.' %}
 {% set contributors = 'false' %}
 
 {% extends 'includes/app-page-template.njk' %}
+
+{% block breadcrumb %}
+  {% include 'content/how-to-write-good-questions/breadcrumbs.njk' %}
+{% endblock %}
 
 {% block mainContent %}
 <h2 id="understand-why-you're-asking-each-question">Understand why you're asking each question</h2>
@@ -83,13 +86,4 @@
   <li><a href="https://www.gov.uk/service-manual/design/collecting-personal-information-from-users">Collecting personal information from users</a> (GOV.UK)</li>
 </ul>
 
-{% endblock %}
-
-{% block pagination %}
-{{ pagination({
-  "previousUrl": "/service-manual/content/how-to-write-good-questions-for-forms/understand-the-problem-before-you-write-your-questions",
-  "previousPage": "Understand the problem before you write your questions",
-  "nextUrl": "/service-manual/content/how-to-write-good-questions-for-forms/consider-the-sensitivities-around-your-questions",
-  "nextPage": "Consider the sensitivities around your questions"
-}) }}
 {% endblock %}

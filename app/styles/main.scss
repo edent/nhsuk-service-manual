@@ -172,6 +172,11 @@ td {
     display: none;
   }
 
+  .app-side-nav__link {
+    @include nhsuk-font($size: 19);
+    text-decoration: underline;
+  }
+
 }
 
 // Example
@@ -202,23 +207,6 @@ td {
 .app-example + h3 {
   @include nhsuk-responsive-padding(2, 'top');
 }
-
-// Breadcrumbs hot fixes
-.nhsuk-breadcrumb__link,
-.nhsuk-breadcrumb__backlink {
-  &:visited {
-    color: $color_nhsuk-blue;
-  }
-  &:hover {
-    color: $color_nhsuk-black;
-  }
-  &:focus {
-    &:visited {
-      color: $color_nhsuk-black;
-    }
-  }
-}
-
 
 // Promo icons
 

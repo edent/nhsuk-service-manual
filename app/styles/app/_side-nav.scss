@@ -31,13 +31,18 @@
   text-decoration: none;
 
   &:hover {
-    background: 0;
-    box-shadow: none;
     color: $color_nhsuk-blue;
     text-decoration: underline;
   }
 
   &:visited {
     color: $color_nhsuk-blue;
+  }
+
+  &:focus {
+    &:hover,
+    &:visited {
+      color: $nhsuk-focus-text-color;
+    }
   }
 }

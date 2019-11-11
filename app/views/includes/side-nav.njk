@@ -32,21 +32,21 @@
   { title: "Inclusive language", url: "/service-manual/content/inclusive-language" },
   { title: "A to Z of NHS health writing", url: "/service-manual/content/a-to-z-of-NHS-health-writing" },
   { title: "Health literacy", url: "/service-manual/content/health-literacy" },
+  { title: "How to write good questions for forms", url: "/service-manual/content/how-to-write-good-questions/" },
   { title: "Numbers, measurements, dates and time", url: "/service-manual/content/numbers-measurements-dates-time" },
   { title: "Formatting and punctuation", url: "/service-manual/content/formatting-and-punctuation" },
   { title: "Links and PDFs", url: "/service-manual/content/links-and-pdfs" }
 ] %}
 
-{% set contentQuestionsNavigation = [
-  { title: "Introduction", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Understand the problem before you write your questions", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Make sure you need each question", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Consider the sensitivities around your questions", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Use Yes No questions, but be careful", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Get the questions into order", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Think of the form as a conversation", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Write the supporting content for your form", url: "/service-manual/content/make-sure-you-need-each-question" },
-  { title: "Test your questions", url: "/service-manual/content/make-sure-you-need-each-question" }
+{% set writeGoodQuestionsNavigation = [
+  { title: "Introduction", url: "/service-manual/content/how-to-write-good-questions/introduction" },
+  { title: "Make sure you need each question", url: "/service-manual/content/how-to-write-good-questions/make-sure-you-need-each-question" },
+  { title: "Consider the sensitivities around your questions", url: "/service-manual/content/how-to-write-good-questions/make-sure-you-need-each-question" },
+  { title: "Use Yes No questions, but be careful", url: "/service-manual/content/how-to-write-good-questions/make-sure-you-need-each-question" },
+  { title: "Get the questions into order", url: "/service-manual/content/how-to-write-good-questions/make-sure-you-need-each-question" },
+  { title: "Think of the form as a conversation", url: "/service-manual/content/how-to-write-good-questions/make-sure-you-need-each-question" },
+  { title: "Write the supporting content for your form", url: "/service-manual/content/how-to-write-good-questions/make-sure-you-need-each-question" },
+  { title: "Test your questions", url: "/service-manual/content/how-to-write-good-questions/make-sure-you-need-each-question" }
 ] %}
 
 {% set stylesNavigation = [
@@ -67,7 +67,7 @@
   { title: "Contents list", url: "/service-manual/components/contents-list" },
   { title: "Date input", url: "/service-manual/components/date-input" },
   { title: "Details", url: "/service-manual/components/details" },
-  { title: "Do and Don't list", url: "/service-manual/components/do-and-dont-list" },
+  { title: "Do and Don't lists", url: "/service-manual/components/do-and-dont-list" },
   { title: "Error message", url: "/service-manual/components/error-message" },
   { title: "Error summary", url: "/service-manual/components/error-summary" },
   { title: "Expander", url: "/service-manual/components/expander" },
@@ -138,15 +138,15 @@
   </ul>
   {% endif %}
   {%- if pageSection == 'Content style guide' %}
-  <h2 class="app-side-nav__heading">Style guide</h2>
   <ul class="nhsuk-list app-side-nav__list">
   {% for item in contentNavigation %}
     <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
   {% endfor %}
   </ul>
-  <h2 class="app-side-nav__heading">How to write good questions for forms</h2>
+  {% endif %}
+  {%- if pageSection == 'How to write good questions for forms' %}
   <ul class="nhsuk-list app-side-nav__list">
-  {% for item in contentQuestionsNavigation %}
+  {% for item in writeGoodQuestionsNavigation %}
     <li class="app-side-nav__item{% if item.title == pageTitle %} app-side-nav__item--current{% endif %}"><a class="app-side-nav__link" href="{{ item.url }}">{{ item.title }}</a></li>
   {% endfor %}
   </ul>

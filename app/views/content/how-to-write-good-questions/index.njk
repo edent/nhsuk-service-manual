@@ -1,0 +1,26 @@
+{% set pageTitle = 'How to write good questions for forms' %}
+{% set pageSection = 'How to write good questions for forms' %}
+{% set pageDescription = 'Guidance for NHS content designers and teams working on forms and transactional services.' %}
+{% set contributors = 'false' %}
+{% set landingPage = 'true' %}
+
+{% extends 'includes/app-page-template.njk' %}
+
+{% block breadcrumb %}
+  {% include 'content/how-to-write-good-questions/breadcrumbs.njk' %}
+{% endblock %}
+
+{% block mainContent %}
+
+  <p>This guidance will help you understand:</p>
+  <ul>
+    <li>which questions to include</li>
+    <li>how to write them well</li>
+    <li>how to write other content for your form or transaction, for example: instructions, help text and error messages</li>
+  </ul>
+
+  <div class="app-index-navigation">
+    {% include 'includes/side-nav.njk' %}
+  </div>
+
+{% endblock %}

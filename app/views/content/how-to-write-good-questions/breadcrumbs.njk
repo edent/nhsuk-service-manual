@@ -1,0 +1,26 @@
+<nav class="nhsuk-breadcrumb" aria-label="Breadcrumb">
+  <div class="nhsuk-width-container">
+    <ol class="nhsuk-breadcrumb__list">
+      <li class="nhsuk-breadcrumb__item"><a class="nhsuk-breadcrumb__link" href="/">Home</a></li>
+      {%- if landingPage == 'true' %}
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="/service-manual/content">Content style guide</a>
+      </li>
+      {% else %}
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="/service-manual/content">Content style guide</a>
+      </li>
+      <li class="nhsuk-breadcrumb__item">
+        <a class="nhsuk-breadcrumb__link" href="/service-manual/content/how-to-write-good-questions">How to write good questions for forms</a>
+      </li>
+      {% endif %}
+    </ol>
+    <p class="nhsuk-breadcrumb__back">
+    {%- if landingPage == 'true' %}
+      <a class="nhsuk-breadcrumb__backlink" href="/service-manual/content">Back to Content style guide</a>
+      {% else %}
+      <a class="nhsuk-breadcrumb__backlink" href="/service-manual/content/how-to-write-good-questions">Back to How to write good questions</a>
+      {% endif %}
+    </p>
+  </div>
+</nav>
