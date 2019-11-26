@@ -1,5 +1,9 @@
 # NHS digital service manual Changelog
 
+## 1.13.4 - Unreleased
+
+- Update package dependencies to latest versions
+
 ## 1.13.3 - 25 November 2019
 
 - Made it clear in PDF guidance that PDFs can be used for a permanent record
